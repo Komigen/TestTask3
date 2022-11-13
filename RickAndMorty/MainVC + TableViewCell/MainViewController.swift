@@ -57,7 +57,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let url = URL(string: item.image)
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                 
                 cell.heroImageView.image = UIImage(data: data!)
                 
